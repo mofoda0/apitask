@@ -3,6 +3,7 @@ async function FetchAPI(){
     try{
         const apifetch = await fetch("https://fakestoreapi.com/products");
         const products = await apifetch.json();
+        console.log(products);
         products.forEach(product => {
             productsCo.innerHTML = productsCo.innerHTML + 
             `
@@ -10,6 +11,7 @@ async function FetchAPI(){
                     <img src="${product.image}" alt="${product.title}" />
                     <h3>${product.title}</h3>
                     <p>${product.description.substring(0, 100)}</p>
+                    <p>${product.rating.rate} ⭐ (${product.rating.count} reviews)</p>
                     <div class="price">$${product.price}</div>
                 </div>
             `;
