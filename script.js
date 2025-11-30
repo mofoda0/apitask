@@ -3,7 +3,6 @@ async function FetchAPI(){
     try{
         const apifetch = await fetch("https://fakestoreapi.com/products");
         const products = await apifetch.json();
-        console.log(products);
         products.forEach(product => {
             productsCo.innerHTML = productsCo.innerHTML + 
             `
